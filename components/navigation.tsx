@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Phone, Mail, MapPin, Facebook, Instagram, Youtube, Twitter } from "lucide-react"
+import { Menu, X, Facebook, Instagram, Youtube, Twitter } from "lucide-react"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -45,41 +45,6 @@ export default function Navigation() {
                 <Instagram className="h-4 w-4 hover:text-purple-200 cursor-pointer transition-colors" />
                 <Youtube className="h-4 w-4 hover:text-purple-200 cursor-pointer transition-colors" />
                 <Twitter className="h-4 w-4 hover:text-purple-200 cursor-pointer transition-colors" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Contact Info Bar */}
-      <div className="bg-gradient-to-r from-slate-800 via-gray-800 to-slate-800 py-3 border-b border-purple-500/30">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-100">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-lg">
-                <Phone className="h-5 w-5 text-white" />
-              </div>
-              <div>
-                <div className="font-semibold text-white">Call Us Anytime</div>
-                <div className="text-gray-300">840-800-4141</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
-                <MapPin className="h-5 w-5 text-white" />
-              </div>
-              <div>
-                <div className="font-semibold text-white">Location</div>
-                <div className="text-gray-300">Mumbai, Maharashtra, India</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
-                <Mail className="h-5 w-5 text-white" />
-              </div>
-              <div>
-                <div className="font-semibold text-white">Email Us Now</div>
-                <div className="text-gray-300">info@suprimotech.com</div>
               </div>
             </div>
           </div>
