@@ -13,123 +13,132 @@ export default function PortfolioPage() {
 
   const filters = [
     { id: "all", label: "All Projects" },
-    { id: "ecommerce", label: "E-commerce" },
-    { id: "healthcare", label: "Healthcare" },
     { id: "education", label: "Education" },
-    { id: "realestate", label: "Real Estate" },
-    { id: "fitness", label: "Fitness" },
+    { id: "technology", label: "Technology" },
+    { id: "coaching", label: "Coaching" },
+    { id: "media", label: "Media" },
+    { id: "consultancy", label: "Consultancy" },
   ]
 
   const caseStudies = [
     {
       id: 1,
-      client: "FitLife Gym",
-      logo: "FL",
-      industry: "fitness",
-      problem: "Low membership sign-ups and poor online visibility in competitive fitness market",
-      approach: "Comprehensive social media strategy with targeted Google Ads and local SEO optimization",
+      client: "To Learn To Earn",
+      logo: "/clients/to-learn-to-earn.png",
+      industry: "education",
+      problem: "Low student enrollment and poor online visibility in competitive education market",
+      approach: "Comprehensive social media strategy with targeted Google Ads and educational content marketing",
       results: {
-        leads: "300% increase in leads",
-        conversion: "45% higher conversion rate",
+        leads: "300% increase in enrollments",
+        conversion: "45% higher course completion",
         roi: "8X ROI on ad spend",
         timeline: "3 months",
       },
       testimonial:
-        "Suprimo Tech transformed our digital presence. We went from struggling to get members to having a waiting list!",
-      services: ["Social Media Marketing", "Google Ads", "SEO"],
-      image: "/placeholder.svg?height=300&width=400",
-      color: "bg-gradient-to-br from-pink-500 to-rose-500",
+        "Suprimo Tech transformed our digital presence. We went from struggling to get students to having a waiting list!",
+      services: ["Social Media Marketing", "Google Ads", "Content Marketing"],
+      color: "bg-gradient-to-br from-orange-500 to-amber-500",
+      description:
+        "Skill development and earning-focused education platform helping students build practical skills for better career opportunities.",
     },
     {
       id: 2,
-      client: "MediCare Plus",
-      logo: "MC",
-      industry: "healthcare",
-      problem: "Difficulty reaching patients online and building trust in digital healthcare services",
-      approach: "Content marketing strategy with patient education focus and reputation management",
+      client: "Speak UP Pro",
+      logo: "/clients/speak-up-pro.png",
+      industry: "coaching",
+      problem: "Difficulty reaching potential students and building trust in communication training services",
+      approach: "Personal branding strategy with video content and targeted LinkedIn campaigns",
       results: {
-        leads: "250% increase in appointments",
-        conversion: "60% improvement in online bookings",
+        leads: "250% increase in inquiries",
+        conversion: "60% improvement in course bookings",
         roi: "6X ROI on marketing spend",
         timeline: "4 months",
       },
       testimonial:
-        "The team understood our healthcare industry needs perfectly. Patient inquiries have never been higher.",
-      services: ["Content Marketing", "SEO", "Reputation Management"],
-      image: "/placeholder.svg?height=300&width=400",
-      color: "bg-gradient-to-br from-blue-500 to-cyan-500",
+        "The team understood our communication training needs perfectly. Student inquiries have never been higher.",
+      services: ["Personal Branding", "LinkedIn Marketing", "Video Content"],
+      color: "bg-gradient-to-br from-gray-700 to-gray-900",
+      description:
+        "Professional public speaking and communication skills training institute helping individuals excel in presentations and interpersonal communication.",
     },
     {
       id: 3,
-      client: "EduTech Academy",
-      logo: "EA",
-      industry: "education",
-      problem: "Low enrollment rates for online courses and poor brand recognition",
-      approach: "Multi-channel digital marketing with focus on social proof and targeted advertising",
+      client: "Dr. Digital India",
+      logo: "/clients/dr-digital-india.png",
+      industry: "consultancy",
+      problem: "Need to establish thought leadership and generate B2B leads in digital marketing space",
+      approach: "Content marketing strategy with industry insights and LinkedIn thought leadership campaigns",
       results: {
-        leads: "400% increase in course enrollments",
-        conversion: "35% higher completion rates",
+        leads: "400% increase in consultation requests",
+        conversion: "35% higher client retention",
         roi: "10X ROI on marketing investment",
         timeline: "2 months",
       },
-      testimonial: "Amazing results! Our course enrollments skyrocketed and student engagement improved significantly.",
-      services: ["Social Media Marketing", "Meta Ads", "Email Marketing"],
-      image: "/placeholder.svg?height=300&width=400",
-      color: "bg-gradient-to-br from-purple-500 to-indigo-500",
+      testimonial:
+        "Amazing results! Our consultation requests skyrocketed and client engagement improved significantly.",
+      services: ["Content Marketing", "LinkedIn Marketing", "Thought Leadership"],
+      color: "bg-gradient-to-br from-blue-500 to-cyan-500",
+      description:
+        "Digital marketing consultancy providing expert guidance and training to businesses looking to excel in digital transformation.",
     },
     {
       id: 4,
-      client: "Urban Homes",
-      logo: "UH",
-      industry: "realestate",
-      problem: "Slow property sales and limited online lead generation",
-      approach: "Visual-first marketing strategy with virtual tours and targeted property advertising",
+      client: "TICT Tulsi Institute",
+      logo: "/clients/tulsi-institute.png",
+      industry: "technology",
+      problem: "Low enrollment in computer courses and limited online presence",
+      approach: "Local SEO optimization with targeted social media campaigns for tech education",
       results: {
-        leads: "200% increase in property inquiries",
-        conversion: "50% faster sales cycle",
+        leads: "200% increase in course inquiries",
+        conversion: "50% faster enrollment process",
         roi: "7X ROI on advertising",
         timeline: "5 months",
       },
-      testimonial: "Our property sales doubled within months. The digital strategy was exactly what we needed.",
-      services: ["Google Ads", "Social Media Marketing", "Website Development"],
-      image: "/placeholder.svg?height=300&width=400",
-      color: "bg-gradient-to-br from-green-500 to-emerald-500",
+      testimonial: "Our course enrollments doubled within months. The digital strategy was exactly what we needed.",
+      services: ["Local SEO", "Social Media Marketing", "Website Development"],
+      color: "bg-gradient-to-br from-red-500 to-pink-500",
+      description:
+        "Computer technology and certification institute offering comprehensive IT training and professional development courses.",
     },
     {
       id: 5,
-      client: "StyleHub Fashion",
-      logo: "SH",
-      industry: "ecommerce",
-      problem: "Low online sales and poor social media engagement for fashion brand",
-      approach: "Influencer partnerships combined with conversion-optimized e-commerce strategy",
+      client: "Erit Maker Test Series",
+      logo: "/clients/erit-maker.png",
+      industry: "education",
+      problem: "Low visibility in competitive exam preparation market and poor student engagement",
+      approach: "Educational content marketing with exam-focused social media strategy and student success stories",
       results: {
-        leads: "350% increase in online sales",
-        conversion: "40% improvement in cart conversion",
+        leads: "350% increase in test series subscriptions",
+        conversion: "40% improvement in student retention",
         roi: "9X ROI on marketing spend",
         timeline: "3 months",
       },
-      testimonial: "Our online sales exploded! The social media strategy brought our brand to life.",
-      services: ["Social Media Marketing", "Influencer Marketing", "E-commerce Optimization"],
-      image: "/placeholder.svg?height=300&width=400",
-      color: "bg-gradient-to-br from-orange-500 to-red-500",
+      testimonial:
+        "Our test series subscriptions exploded! The targeted approach brought quality students to our platform.",
+      services: ["Content Marketing", "Social Media Marketing", "Student Engagement"],
+      color: "bg-gradient-to-br from-red-600 to-gray-700",
+      description:
+        "Competitive exam preparation platform providing comprehensive test series and study materials for various entrance examinations.",
     },
     {
       id: 6,
-      client: "TechStart Solutions",
-      logo: "TS",
-      industry: "technology",
-      problem: "Difficulty generating B2B leads and establishing thought leadership",
-      approach: "LinkedIn-focused strategy with content marketing and lead nurturing automation",
+      client: "Coach Yashodeep",
+      logo: "/clients/coach-yashodeep.png",
+      industry: "coaching",
+      problem: "Difficulty establishing personal brand and reaching potential coaching clients online",
+      approach: "Personal branding with inspirational content and targeted coaching service promotion",
       results: {
-        leads: "280% increase in qualified leads",
-        conversion: "55% improvement in lead quality",
+        leads: "280% increase in coaching inquiries",
+        conversion: "55% improvement in client acquisition",
         roi: "12X ROI on marketing investment",
         timeline: "4 months",
       },
-      testimonial: "The B2B lead generation strategy exceeded all our expectations. Quality leads are now consistent.",
-      services: ["LinkedIn Marketing", "Content Marketing", "Marketing Automation"],
-      image: "/placeholder.svg?height=300&width=400",
-      color: "bg-gradient-to-br from-cyan-500 to-blue-500",
+      testimonial:
+        "The personal branding strategy exceeded all expectations. Quality coaching inquiries are now consistent.",
+      services: ["Personal Branding", "Content Marketing", "Social Media Strategy"],
+      color: "bg-gradient-to-br from-blue-600 to-purple-600",
+      description:
+        "Personal development and life coaching services helping individuals achieve their goals and unlock their potential.",
     },
   ]
 
@@ -203,10 +212,14 @@ export default function PortfolioPage() {
                       {/* Content Side */}
                       <div className="p-8 lg:p-12">
                         <div className="flex items-center gap-4 mb-6">
-                          <div
-                            className={`w-16 h-16 ${study.color} text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg`}
-                          >
-                            {study.logo}
+                          <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg border">
+                            <Image
+                              src={study.logo || "/placeholder.svg"}
+                              alt={study.client}
+                              width={48}
+                              height={48}
+                              className="object-contain"
+                            />
                           </div>
                           <div>
                             <h3 className="text-2xl font-bold text-gray-900">{study.client}</h3>
@@ -214,6 +227,10 @@ export default function PortfolioPage() {
                               {study.industry}
                             </Badge>
                           </div>
+                        </div>
+
+                        <div className="mb-6">
+                          <p className="text-gray-600 leading-relaxed">{study.description}</p>
                         </div>
 
                         <div className="space-y-8">
@@ -293,8 +310,14 @@ export default function PortfolioPage() {
                       <div className="bg-gradient-to-br from-purple-50 to-blue-50 p-8 lg:p-12 flex items-center justify-center">
                         <div className="w-full max-w-md text-center">
                           <div className="w-64 h-64 mx-auto mb-6 bg-white rounded-2xl shadow-2xl flex items-center justify-center">
-                            <div className={`w-32 h-32 ${study.color} rounded-2xl flex items-center justify-center`}>
-                              <span className="text-4xl font-bold text-white">{study.logo}</span>
+                            <div className="w-32 h-32 bg-gray-50 rounded-2xl flex items-center justify-center">
+                              <Image
+                                src={study.logo || "/placeholder.svg"}
+                                alt={study.client}
+                                width={80}
+                                height={80}
+                                className="object-contain"
+                              />
                             </div>
                           </div>
                           <div className="text-center">
@@ -349,7 +372,7 @@ export default function PortfolioPage() {
               Let's discuss how we can help your business achieve similar results
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link href="/contact">
+              <Link href="https://wa.me/18408004141">
                 <Button
                   size="lg"
                   className="btn-orange text-white px-10 py-4 text-lg font-semibold rounded-2xl shadow-2xl"

@@ -1,91 +1,169 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ArrowRight } from "lucide-react"
+import { Menu, X, Phone, Mail, MapPin, Facebook, Instagram, Youtube, Twitter } from "lucide-react"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/services", label: "Services" },
-    { href: "/portfolio", label: "Portfolio" },
-    { href: "/contact", label: "Contact" },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Contact", href: "/contact" },
   ]
 
   return (
-    <nav className="bg-gray-900/95 backdrop-blur-md shadow-2xl border-b border-purple-800/20 sticky top-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-18">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 py-2">
-            <Image
-              src="/logo-colored.png"
-              alt="Suprimo Tech Logo"
-              width={180}
-              height={60}
-              className="h-12 w-auto"
-              priority
-            />
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-gray-300 hover:text-white font-semibold transition-all duration-300 relative group"
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "shadow-2xl" : "shadow-lg"}`}>
+      {/* Top Bar */}
+      <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 text-white py-2">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center text-sm">
+            <div className="flex items-center gap-2">
+              <span>🚀 Welcome To Suprimo Tech</span>
+            </div>
+            <div className="hidden md:flex items-center gap-6">
+              <Link href="/contact" className="hover:text-purple-200 transition-colors">
+                Download Brochure
               </Link>
-            ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button className="btn-gradient text-white font-semibold px-6 py-2.5 rounded-xl shadow-lg">
-              Get Free Quote
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 rounded-lg hover:bg-purple-800/20 transition-colors duration-200"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="h-6 w-6 text-purple-400" /> : <Menu className="h-6 w-6 text-purple-400" />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-4 border-t border-purple-800/20 bg-gray-900/95 backdrop-blur-md">
-            <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-gray-300 hover:text-white font-semibold py-2 px-4 rounded-lg hover:bg-purple-800/20 transition-all duration-200"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <Button className="btn-gradient text-white font-semibold mt-4 mx-4 rounded-xl shadow-lg">
-                Get Free Quote
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <div className="flex items-center gap-3">
+                <Facebook className="h-4 w-4 hover:text-purple-200 cursor-pointer transition-colors" />
+                <Instagram className="h-4 w-4 hover:text-purple-200 cursor-pointer transition-colors" />
+                <Youtube className="h-4 w-4 hover:text-purple-200 cursor-pointer transition-colors" />
+                <Twitter className="h-4 w-4 hover:text-purple-200 cursor-pointer transition-colors" />
+              </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
-    </nav>
+
+      {/* Contact Info Bar */}
+      <div className="bg-gradient-to-r from-slate-800 via-gray-800 to-slate-800 py-3 border-b border-purple-500/30">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-100">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-lg">
+                <Phone className="h-5 w-5 text-white" />
+              </div>
+              <div>
+                <div className="font-semibold text-white">Call Us Anytime</div>
+                <div className="text-gray-300">840-800-4141</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
+                <MapPin className="h-5 w-5 text-white" />
+              </div>
+              <div>
+                <div className="font-semibold text-white">Location</div>
+                <div className="text-gray-300">Mumbai, Maharashtra, India</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
+                <Mail className="h-5 w-5 text-white" />
+              </div>
+              <div>
+                <div className="font-semibold text-white">Email Us Now</div>
+                <div className="text-gray-300">info@suprimotech.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navigation */}
+      <div
+        className={`bg-gradient-to-r from-gray-900 via-slate-900 to-gray-900 py-4 transition-all duration-300 ${
+          isScrolled ? "backdrop-blur-lg bg-opacity-95" : ""
+        }`}
+      >
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo-colored.png"
+                alt="Suprimo Tech"
+                width={180}
+                height={60}
+                className="h-12 w-auto"
+                priority
+              />
+            </Link>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-8">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-200 hover:text-white font-medium transition-colors duration-200 relative group"
+                >
+                  {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-200 group-hover:w-full"></span>
+                </Link>
+              ))}
+            </nav>
+
+            {/* CTA Button */}
+            <div className="hidden lg:block">
+              <Link href="/contact">
+                <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+                  Customer Corner →
+                </Button>
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="lg:hidden p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800 transition-colors"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isOpen && (
+        <div className="lg:hidden bg-gradient-to-r from-gray-900 via-slate-900 to-gray-900 border-t border-gray-700 shadow-2xl">
+          <div className="container mx-auto px-4 py-4">
+            <nav className="flex flex-col space-y-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-200 hover:text-white font-medium py-2 transition-colors border-b border-gray-800 hover:border-purple-500"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <Link href="/contact" onClick={() => setIsOpen(false)}>
+                <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-2 rounded-lg font-semibold mt-4 shadow-lg">
+                  Customer Corner →
+                </Button>
+              </Link>
+            </nav>
+          </div>
+        </div>
+      )}
+    </header>
   )
 }

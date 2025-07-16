@@ -20,6 +20,7 @@ import {
   Star,
   Sparkles,
   Users,
+  Quote,
 } from "lucide-react"
 
 export default function HomePage() {
@@ -77,15 +78,91 @@ export default function HomePage() {
     { number: "25+", label: "Industries Covered", icon: <Globe className="h-6 w-6" /> },
   ]
 
-  const clientLogos = [
-    "Flipkart",
-    "Ajanta Pharma",
-    "TechCorp",
-    "GrowthLab",
-    "DigitalPro",
-    "BrandMax",
-    "ScaleUp",
-    "InnovateCo",
+  const clients = [
+    {
+      name: "Shabdratna",
+      logo: "/clients/shabdratna.png",
+      industry: "Media & Audio Services",
+      description: "Premium audio content and voice-over services",
+    },
+    {
+      name: "To Learn To Earn",
+      logo: "/clients/to-learn-to-earn.png",
+      industry: "Education & Training",
+      description: "Skill development and earning-focused education platform",
+    },
+    {
+      name: "Speak UP Pro",
+      logo: "/clients/speak-up-pro.png",
+      industry: "Communication Training",
+      description: "Professional public speaking and communication skills training",
+    },
+    {
+      name: "Dr. Digital India",
+      logo: "/clients/dr-digital-india.png",
+      industry: "Digital Marketing",
+      description: "Digital marketing consultancy and training services",
+    },
+    {
+      name: "G.T.I",
+      logo: "/clients/gti.png",
+      industry: "Technology Institute",
+      description: "Computer technology and IT training institute",
+    },
+    {
+      name: "Excellent",
+      logo: "/clients/excellent.png",
+      industry: "Business Consultancy",
+      description: "Business excellence and success coaching services",
+    },
+    {
+      name: "Vidyalankaar Classes",
+      logo: "/clients/vidyalankaar.png",
+      industry: "Medical & Engineering",
+      description: "Medical and engineering entrance exam preparation",
+    },
+    {
+      name: "Coach Yashodeep",
+      logo: "/clients/coach-yashodeep.png",
+      industry: "Personal Coaching",
+      description: "Personal development and life coaching services",
+    },
+    {
+      name: "TICT Tulsi Institute",
+      logo: "/clients/tulsi-institute.png",
+      industry: "Computer Education",
+      description: "Computer technology and certification courses",
+    },
+    {
+      name: "Erit Maker Test Series",
+      logo: "/clients/erit-maker.png",
+      industry: "Test Preparation",
+      description: "Competitive exam preparation and test series",
+    },
+  ]
+
+  const testimonials = [
+    {
+      quote:
+        "Suprimo Tech transformed our digital presence completely. Our student enrollments increased by 300% within just 3 months!",
+      author: "To Learn To Earn Team",
+      position: "Education Platform",
+      logo: "/clients/to-learn-to-earn.png",
+    },
+    {
+      quote:
+        "The social media strategy they created for us was phenomenal. Our brand visibility and engagement skyrocketed!",
+      author: "Speak UP Pro",
+      position: "Communication Training",
+      logo: "/clients/speak-up-pro.png",
+    },
+    {
+      quote:
+        "As a digital marketing consultant myself, I can say Suprimo Tech's approach is truly professional and result-oriented.",
+      author: "Dr. Digital India",
+      position: "Digital Marketing Expert",
+      logo: "/clients/dr-digital-india.png",
+    },
   ]
 
   return (
@@ -234,21 +311,90 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Client Logos */}
+      {/* Client Showcase */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Trusted by Leading Brands</h3>
-            <p className="text-gray-600 text-lg">Join 120+ businesses that trust us with their growth</p>
+            <Badge className="mb-6 bg-purple-100 text-purple-700">
+              <Award className="w-4 h-4 mr-2" />
+              Our Valued Clients
+            </Badge>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Trusted by Industry Leaders</h3>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              From education to technology, we've helped diverse businesses achieve remarkable digital growth
+            </p>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
-            {clientLogos.map((logo, index) => (
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-16">
+            {clients.map((client, index) => (
               <div
                 key={index}
-                className="text-2xl font-bold text-gray-400 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500 transition-all duration-300 cursor-pointer"
+                className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200"
               >
-                {logo}
+                <div className="relative w-16 h-16 mx-auto mb-4 bg-gray-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Image
+                    src={client.logo || "/placeholder.svg"}
+                    alt={client.name}
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
+                </div>
+                <h4 className="text-sm font-bold text-gray-900 text-center mb-1">{client.name}</h4>
+                <p className="text-xs text-gray-500 text-center">{client.industry}</p>
               </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <p className="text-gray-600 mb-6">Join 120+ successful businesses across 25+ industries</p>
+            <Link href="/portfolio">
+              <Button className="btn-gradient text-white px-8 py-3 rounded-xl font-semibold">
+                View All Success Stories
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 section-gradient relative">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="mb-6 bg-white/80 text-purple-700 border-purple-200">
+              <Quote className="w-4 h-4 mr-2" />
+              Client Testimonials
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Real feedback from real businesses who've experienced remarkable growth with us
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="border-0 shadow-xl bg-white/90 backdrop-blur-sm">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mr-4">
+                      <Image
+                        src={testimonial.logo || "/placeholder.svg"}
+                        alt={testimonial.author}
+                        width={32}
+                        height={32}
+                        className="object-contain"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900">{testimonial.author}</h4>
+                      <p className="text-sm text-gray-600">{testimonial.position}</p>
+                    </div>
+                  </div>
+                  <Quote className="h-8 w-8 text-purple-300 mb-4" />
+                  <p className="text-gray-700 leading-relaxed italic">"{testimonial.quote}"</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -346,7 +492,7 @@ export default function HomePage() {
                   <ArrowRight className="ml-3 h-6 w-6" />
                 </Button>
               </Link>
-              <a href="https://wa.me/919403362424" target="_blank" rel="noopener noreferrer" className="inline-flex">
+              <a href="https://wa.me/18408004141" target="_blank" rel="noopener noreferrer" className="inline-flex">
                 <Button
                   variant="outline"
                   size="lg"
@@ -363,7 +509,7 @@ export default function HomePage() {
 
       {/* WhatsApp Float Button */}
       <a
-        href="https://wa.me/919403362424"
+        href="https://wa.me/18408004141"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50"

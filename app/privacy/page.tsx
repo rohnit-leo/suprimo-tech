@@ -134,8 +134,8 @@ export default function PrivacyPage() {
                     info.suprimotech@gmail.com
                   </a>
                   <span className="text-gray-400 hidden sm:block">|</span>
-                  <a href="tel:+919403362424" className="text-orange-400 hover:text-orange-300 font-semibold">
-                    +91 9403 36 2424
+                  <a href="tel:840-800-4141" className="text-orange-400 hover:text-orange-300 font-semibold">
+                    840-800-4141
                   </a>
                 </div>
               </CardContent>

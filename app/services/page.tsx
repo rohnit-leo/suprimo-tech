@@ -355,7 +355,7 @@ export default function ServicesPage() {
               Choose the service that fits your needs or let us create a custom solution for your business
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link href="/contact">
+              <Link href="https://wa.me/18408004141">
                 <Button
                   size="lg"
                   className="btn-orange text-white px-10 py-4 text-lg font-semibold rounded-2xl shadow-2xl"
