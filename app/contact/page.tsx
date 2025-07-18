@@ -67,21 +67,21 @@ Please get back to me with more information. Thank you!`
     const encodedMessage = encodeURIComponent(message)
 
     // Redirect to WhatsApp
-    window.open(`https://wa.me/18408004141?text=${encodedMessage}`, "_blank")
+    window.open(`https://wa.me/918408004141?text=${encodedMessage}`, "_blank")
   }
 
   const handleQuickQuote = () => {
     const message = `Hi Suprimo Tech! I'm interested in getting a quick quote for your digital marketing services. Please provide me with more information about your packages and pricing. Thank you!`
     const encodedMessage = encodeURIComponent(message)
-    window.open(`https://wa.me/18408004141?text=${encodedMessage}`, "_blank")
+    window.open(`https://wa.me/918408004141?text=${encodedMessage}`, "_blank")
   }
 
   const contactInfo = [
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Call Us",
-      details: "840-800-4141",
-      description: "Mon-Fri from 8am to 5pm",
+      details: "+91 840-800-4141",
+      description: "Mon-Fri 10 am to 6pm",
       color: "bg-gradient-to-br from-blue-500 to-cyan-500",
     },
     {
@@ -94,14 +94,14 @@ Please get back to me with more information. Thank you!`
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Visit Us",
-      details: "Mumbai, Maharashtra",
-      description: "India",
+      details: "Chh. Sambhajinagar, MH",
+      description: "Maharashtra, India",
       color: "bg-gradient-to-br from-orange-500 to-red-500",
     },
     {
       icon: <MessageCircle className="h-6 w-6" />,
       title: "WhatsApp",
-      details: "840-800-4141",
+      details: "+91 840-800-4141",
       description: "Quick support",
       color: "bg-gradient-to-br from-green-500 to-emerald-500",
     },
@@ -164,13 +164,13 @@ Please get back to me with more information. Thank you!`
                 Let's discuss your goals and create a custom strategy that delivers real results for your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="https://wa.me/18408004141" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/918408004141" target="_blank" rel="noopener noreferrer">
                   <Button className="btn-gradient text-white px-8 py-3 rounded-xl font-semibold">
                     <MessageCircle className="mr-2 h-5 w-5" />
                     WhatsApp Now
                   </Button>
                 </a>
-                <a href="tel:8408004141">
+                <a href="tel:+91 840-800-4141">
                   <Button
                     variant="outline"
                     className="px-8 py-3 rounded-xl font-semibold border-purple-200 bg-transparent"
@@ -397,7 +397,7 @@ Please get back to me with more information. Thank you!`
                       <h4 className="font-bold text-gray-900 mb-3">⚡ Quick Response</h4>
                       <p className="text-gray-600 mb-4">Need immediate assistance? We respond within 2 hours!</p>
                       <div className="flex gap-3">
-                        <a href="tel:8408004141">
+                        <a href="tel:+91 840-800-4141">
                           <Button
                             variant="outline"
                             className="border-purple-200 text-purple-600 px-4 py-2 rounded-xl bg-transparent"
@@ -503,7 +503,7 @@ Please get back to me with more information. Thank you!`
               Join 120+ successful businesses and start your digital transformation today
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <a href="https://wa.me/18408004141" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/918408004141" target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   className="btn-orange text-white px-10 py-4 text-lg font-semibold rounded-2xl shadow-2xl"
@@ -512,7 +512,7 @@ Please get back to me with more information. Thank you!`
                   Start WhatsApp Chat
                 </Button>
               </a>
-              <a href="tel:8408004141">
+              <a href="tel:+91 840-800-4141">
                 <Button
                   variant="outline"
                   size="lg"
@@ -529,7 +529,7 @@ Please get back to me with more information. Thank you!`
 
       {/* WhatsApp Float Button */}
       <a
-        href="https://wa.me/18408004141"
+        href="https://wa.me/918408004141"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50"

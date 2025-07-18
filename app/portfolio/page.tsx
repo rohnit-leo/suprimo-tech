@@ -5,145 +5,390 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, ExternalLink, TrendingUp, Users, Target, Award, Star } from "lucide-react"
+import {
+  ArrowRight,
+  Star,
+  Award,
+  TrendingUp,
+  Users,
+  Target,
+  Building2,
+  GraduationCap,
+  Heart,
+  Leaf,
+  Briefcase,
+  Factory,
+} from "lucide-react"
 import { useState } from "react"
 
 export default function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState("all")
 
   const filters = [
-    { id: "all", label: "All Projects" },
-    { id: "education", label: "Education" },
-    { id: "technology", label: "Technology" },
-    { id: "coaching", label: "Coaching" },
-    { id: "media", label: "Media" },
-    { id: "consultancy", label: "Consultancy" },
+    { id: "all", label: "All Clients", count: 33 },
+    { id: "education", label: "Education", count: 12 },
+    { id: "technology", label: "Technology", count: 8 },
+    { id: "agriculture", label: "Agriculture", count: 4 },
+    { id: "business", label: "Business", count: 5 },
+    { id: "manufacturing", label: "Manufacturing", count: 4 },
   ]
 
-  const caseStudies = [
+  const allClients = [
+    // Education & Training
     {
       id: 1,
-      client: "To Learn To Earn",
+      name: "To Learn To Earn",
       logo: "/clients/to-learn-to-earn.png",
-      industry: "education",
-      problem: "Low student enrollment and poor online visibility in competitive education market",
-      approach: "Comprehensive social media strategy with targeted Google Ads and educational content marketing",
-      results: {
-        leads: "300% increase in enrollments",
-        conversion: "45% higher course completion",
-        roi: "8X ROI on ad spend",
-        timeline: "3 months",
-      },
-      testimonial:
-        "Suprimo Tech transformed our digital presence. We went from struggling to get students to having a waiting list!",
-      services: ["Social Media Marketing", "Google Ads", "Content Marketing"],
-      color: "bg-gradient-to-br from-orange-500 to-amber-500",
-      description:
-        "Skill development and earning-focused education platform helping students build practical skills for better career opportunities.",
+      category: "education",
+      industry: "Skill Development Platform",
+      services: ["Social Media Marketing", "Google Ads", "Content Strategy", "Lead Generation"],
+      description: "Comprehensive skill development platform helping students build practical career skills",
+      results: "300% increase in enrollments, 8X ROI",
+      color: "bg-gradient-to-br from-blue-500 to-purple-500",
     },
     {
       id: 2,
-      client: "Speak UP Pro",
+      name: "Speak UP Pro",
       logo: "/clients/speak-up-pro.png",
-      industry: "coaching",
-      problem: "Difficulty reaching potential students and building trust in communication training services",
-      approach: "Personal branding strategy with video content and targeted LinkedIn campaigns",
-      results: {
-        leads: "250% increase in inquiries",
-        conversion: "60% improvement in course bookings",
-        roi: "6X ROI on marketing spend",
-        timeline: "4 months",
-      },
-      testimonial:
-        "The team understood our communication training needs perfectly. Student inquiries have never been higher.",
-      services: ["Personal Branding", "LinkedIn Marketing", "Video Content"],
-      color: "bg-gradient-to-br from-gray-700 to-gray-900",
-      description:
-        "Professional public speaking and communication skills training institute helping individuals excel in presentations and interpersonal communication.",
+      category: "education",
+      industry: "Communication Training",
+      services: ["Personal Branding", "LinkedIn Marketing", "Video Content", "Public Speaking Promotion"],
+      description: "Professional communication and public speaking training institute",
+      results: "250% increase in inquiries, 6X ROI",
+      color: "bg-gradient-to-br from-gray-600 to-gray-800",
     },
     {
       id: 3,
-      client: "Dr. Digital India",
-      logo: "/clients/dr-digital-india.png",
-      industry: "consultancy",
-      problem: "Need to establish thought leadership and generate B2B leads in digital marketing space",
-      approach: "Content marketing strategy with industry insights and LinkedIn thought leadership campaigns",
-      results: {
-        leads: "400% increase in consultation requests",
-        conversion: "35% higher client retention",
-        roi: "10X ROI on marketing investment",
-        timeline: "2 months",
-      },
-      testimonial:
-        "Amazing results! Our consultation requests skyrocketed and client engagement improved significantly.",
-      services: ["Content Marketing", "LinkedIn Marketing", "Thought Leadership"],
-      color: "bg-gradient-to-br from-blue-500 to-cyan-500",
-      description:
-        "Digital marketing consultancy providing expert guidance and training to businesses looking to excel in digital transformation.",
+      name: "Vidyalankaar Classes",
+      logo: "/clients/vidyalankaar.png",
+      category: "education",
+      industry: "Medical & Engineering Prep",
+      services: ["Local SEO", "Social Media Marketing", "Website Development", "Student Engagement"],
+      description: "Premier medical and engineering entrance exam preparation center",
+      results: "200% increase in admissions",
+      color: "bg-gradient-to-br from-red-500 to-pink-500",
     },
     {
       id: 4,
-      client: "TICT Tulsi Institute",
-      logo: "/clients/tulsi-institute.png",
-      industry: "technology",
-      problem: "Low enrollment in computer courses and limited online presence",
-      approach: "Local SEO optimization with targeted social media campaigns for tech education",
-      results: {
-        leads: "200% increase in course inquiries",
-        conversion: "50% faster enrollment process",
-        roi: "7X ROI on advertising",
-        timeline: "5 months",
-      },
-      testimonial: "Our course enrollments doubled within months. The digital strategy was exactly what we needed.",
-      services: ["Local SEO", "Social Media Marketing", "Website Development"],
-      color: "bg-gradient-to-br from-red-500 to-pink-500",
-      description:
-        "Computer technology and certification institute offering comprehensive IT training and professional development courses.",
+      name: "Erit Maker Test Series",
+      logo: "/clients/erit-maker.png",
+      category: "education",
+      industry: "Test Preparation",
+      services: ["Content Marketing", "Social Media Strategy", "Student Outreach", "Digital Branding"],
+      description: "Competitive exam preparation and comprehensive test series platform",
+      results: "350% increase in subscriptions, 9X ROI",
+      color: "bg-gradient-to-br from-red-600 to-gray-700",
     },
     {
       id: 5,
-      client: "Erit Maker Test Series",
-      logo: "/clients/erit-maker.png",
-      industry: "education",
-      problem: "Low visibility in competitive exam preparation market and poor student engagement",
-      approach: "Educational content marketing with exam-focused social media strategy and student success stories",
-      results: {
-        leads: "350% increase in test series subscriptions",
-        conversion: "40% improvement in student retention",
-        roi: "9X ROI on marketing spend",
-        timeline: "3 months",
-      },
-      testimonial:
-        "Our test series subscriptions exploded! The targeted approach brought quality students to our platform.",
-      services: ["Content Marketing", "Social Media Marketing", "Student Engagement"],
-      color: "bg-gradient-to-br from-red-600 to-gray-700",
-      description:
-        "Competitive exam preparation platform providing comprehensive test series and study materials for various entrance examinations.",
+      name: "TICT Tulsi Institute",
+      logo: "/clients/tulsi-institute.png",
+      category: "education",
+      industry: "Computer Education",
+      services: ["Local SEO", "Social Media Marketing", "Website Development", "Course Promotion"],
+      description: "Computer technology and professional IT certification institute",
+      results: "200% increase in course inquiries",
+      color: "bg-gradient-to-br from-red-500 to-pink-500",
     },
     {
       id: 6,
-      client: "Coach Yashodeep",
+      name: "Jeevan Prakash School",
+      logo: "/clients/jeevan-prakash-school.jpeg",
+      category: "education",
+      industry: "Primary & Secondary Education",
+      services: ["Online/Offline Advertising", "Social Media Marketing", "Parent Engagement", "School Branding"],
+      description: "Quality education institution focused on holistic student development",
+      results: "Enhanced school reputation and admissions",
+      color: "bg-gradient-to-br from-blue-600 to-navy-700",
+    },
+    {
+      id: 7,
+      name: "Jeevan Prakash Paramedical",
+      logo: "/clients/jeevan-prakash-paramedical.jpeg",
+      category: "education",
+      industry: "Medical Education",
+      services: ["Admission Marketing", "Meta Ads", "Landing Pages", "Healthcare Content"],
+      description: "Premier paramedical college offering comprehensive healthcare education",
+      results: "Increased medical course enrollments",
+      color: "bg-gradient-to-br from-green-500 to-emerald-600",
+    },
+    {
+      id: 8,
+      name: "Vishwa Foundation",
+      logo: "/clients/vishwa-foundation.jpeg",
+      category: "education",
+      industry: "Educational Foundation",
+      services: ["Branding", "Social Media Marketing", "Educational Content", "Community Outreach"],
+      description: "Educational foundation committed to quality education initiatives",
+      results: "Expanded educational impact and reach",
+      color: "bg-gradient-to-br from-purple-500 to-pink-500",
+    },
+    {
+      id: 9,
+      name: "Rahul Sir's Vishwa Foundation",
+      logo: "/clients/rahul-vishwa-foundation.jpeg",
+      category: "education",
+      industry: "Foundation Classes",
+      services: ["Branding", "Educational Content Marketing", "Student Acquisition", "Academic Promotion"],
+      description: "Foundation classes and comprehensive educational support services",
+      results: "Improved student enrollment and engagement",
+      color: "bg-gradient-to-br from-blue-500 to-cyan-500",
+    },
+    {
+      id: 10,
+      name: "AVD Group",
+      logo: "/clients/avd-group.jpeg",
+      category: "education",
+      industry: "Education Excellence",
+      services: ["Corporate Branding", "Educational Marketing", "Employment Services", "Digital Presence"],
+      description: "Education, excellence, and employment focused group providing comprehensive services",
+      results: "Enhanced brand recognition and service reach",
+      color: "bg-gradient-to-br from-black to-gray-700",
+    },
+    {
+      id: 11,
+      name: "Smart Pacey Institute",
+      logo: "/clients/smart-pacey-institute.jpeg",
+      category: "education",
+      industry: "Technology Solutions & Training",
+      services: ["Corporate Branding", "Technology Marketing", "Professional Training Promotion", "B2B Marketing"],
+      description: "ISO certified institute providing technology solutions and professional training",
+      results: "Increased corporate partnerships and training enrollments",
+      color: "bg-gradient-to-br from-blue-500 to-red-500",
+    },
+    {
+      id: 12,
+      name: "Coach Yashodeep",
       logo: "/clients/coach-yashodeep.png",
-      industry: "coaching",
-      problem: "Difficulty establishing personal brand and reaching potential coaching clients online",
-      approach: "Personal branding with inspirational content and targeted coaching service promotion",
-      results: {
-        leads: "280% increase in coaching inquiries",
-        conversion: "55% improvement in client acquisition",
-        roi: "12X ROI on marketing investment",
-        timeline: "4 months",
-      },
-      testimonial:
-        "The personal branding strategy exceeded all expectations. Quality coaching inquiries are now consistent.",
-      services: ["Personal Branding", "Content Marketing", "Social Media Strategy"],
+      category: "education",
+      industry: "Personal Coaching",
+      services: ["Personal Branding", "Content Marketing", "Social Media Strategy", "Coaching Promotion"],
+      description: "Personal development and life coaching for goal achievement and success",
+      results: "280% increase in coaching inquiries, 12X ROI",
       color: "bg-gradient-to-br from-blue-600 to-purple-600",
-      description:
-        "Personal development and life coaching services helping individuals achieve their goals and unlock their potential.",
+    },
+
+    // Technology & Business
+    {
+      id: 13,
+      name: "Dr. Digital India",
+      logo: "/clients/dr-digital-india.png",
+      category: "technology",
+      industry: "Digital Marketing Consultancy",
+      services: ["Content Marketing", "LinkedIn Marketing", "Thought Leadership", "B2B Lead Generation"],
+      description: "Expert digital marketing consultancy and business transformation services",
+      results: "400% increase in consultation requests, 10X ROI",
+      color: "bg-gradient-to-br from-blue-500 to-cyan-500",
+    },
+    {
+      id: 14,
+      name: "G.T.I",
+      logo: "/clients/gti.png",
+      category: "technology",
+      industry: "Computer Technology Institute",
+      services: ["Local SEO", "Social Media Marketing", "Website Development", "Tech Course Promotion"],
+      description: "Computer technology institute offering comprehensive IT training and certifications",
+      results: "Enhanced digital presence and course enrollments",
+      color: "bg-gradient-to-br from-orange-500 to-red-500",
+    },
+    {
+      id: 15,
+      name: "Sony Technical Institute",
+      logo: "/clients/sony-technical-institute.jpeg",
+      category: "technology",
+      industry: "Technical Education",
+      services: ["Logo Design", "Certificate Design", "Brand Identity", "Educational Marketing"],
+      description: "Technical education institute providing computer and technology courses",
+      results: "Professional brand identity and increased recognition",
+      color: "bg-gradient-to-br from-yellow-500 to-orange-600",
+    },
+    {
+      id: 16,
+      name: "HR24JOB.com",
+      logo: "/clients/hr24job.jpeg",
+      category: "technology",
+      industry: "Job Portal Platform",
+      services: ["Website Development", "Client Services", "Portal Management", "Digital Marketing"],
+      description: "Comprehensive job portal connecting employers with qualified candidates nationwide",
+      results: "Enhanced platform functionality and user engagement",
+      color: "bg-gradient-to-br from-red-500 to-blue-500",
+    },
+    {
+      id: 17,
+      name: "Yashodhara",
+      logo: "/clients/yashodhara.jpeg",
+      category: "technology",
+      industry: "Personal Development Platform",
+      services: ["Personal Development Marketing", "Website Development", "Content Strategy", "Digital Transformation"],
+      description: "Personal development and transformation services platform making huge difference",
+      results: "Expanded reach and transformation impact",
+      color: "bg-gradient-to-br from-blue-600 to-green-500",
+    },
+    {
+      id: 18,
+      name: "Tap Savvy",
+      logo: "/clients/tap-savvy.jpeg",
+      category: "technology",
+      industry: "Digital Technology Solutions",
+      services: ["Brand Development", "Digital Marketing", "Technology Promotion", "B2B Services"],
+      description: "Modern technology solutions provider offering innovative digital services",
+      results: "Enhanced brand presence and client acquisition",
+      color: "bg-gradient-to-br from-blue-500 to-gray-700",
+    },
+    {
+      id: 19,
+      name: "Growfact",
+      logo: "/clients/growfact.jpeg",
+      category: "business",
+      industry: "Growth & Development Services",
+      services: ["Business Development Marketing", "Growth Strategy Promotion", "Content Marketing", "Brand Building"],
+      description: "Comprehensive growth and development services - something for everyone",
+      results: "Expanded service reach and client base",
+      color: "bg-gradient-to-br from-orange-500 to-green-500",
+    },
+    {
+      id: 20,
+      name: "Money Plant Investors",
+      logo: "/clients/money-plant-investors.jpeg",
+      category: "business",
+      industry: "Investment Services",
+      services: ["Financial Marketing", "Investment Promotion", "Client Acquisition", "Trust Building Content"],
+      description: "Professional investment services helping clients grow their financial portfolio",
+      results: "Increased investor confidence and portfolio growth",
+      color: "bg-gradient-to-br from-green-500 to-black",
+    },
+
+    // Agriculture & Export
+    {
+      id: 21,
+      name: "Shabdratna",
+      logo: "/clients/shabdratna.png",
+      category: "agriculture",
+      industry: "Media & Audio Services",
+      services: ["Content Marketing", "Audio Services Promotion", "Brand Development", "Creative Marketing"],
+      description: "Premium audio content creation and professional voice-over services",
+      results: "Enhanced brand recognition and service bookings",
+      color: "bg-gradient-to-br from-orange-500 to-red-500",
+    },
+    {
+      id: 22,
+      name: "Dr. Agro India",
+      logo: "/clients/dr-agro-india.jpeg",
+      category: "agriculture",
+      industry: "Agriculture Services",
+      services: ["Digital Marketing", "Agricultural Content", "SEO", "Farmer Outreach"],
+      description: "Largest agriculture service provider offering comprehensive farming solutions",
+      results: "Expanded farmer network and service adoption",
+      color: "bg-gradient-to-br from-green-500 to-emerald-600",
+    },
+    {
+      id: 23,
+      name: "Bharat Agro",
+      logo: "/clients/bharat-agro.jpeg",
+      category: "agriculture",
+      industry: "Agricultural Solutions",
+      services: ["Agricultural Marketing", "Brand Development", "Digital Presence", "Farmer Education"],
+      description: "Comprehensive agricultural services and innovative farming solutions provider",
+      results: "Increased farmer engagement and solution adoption",
+      color: "bg-gradient-to-br from-green-600 to-emerald-700",
+    },
+    {
+      id: 24,
+      name: "Sahara Agro Export",
+      logo: "/clients/sahara-agro-export.jpeg",
+      category: "agriculture",
+      industry: "Agricultural Export",
+      services: ["Export Marketing", "International Branding", "B2B Lead Generation", "Global Market Reach"],
+      description: "Leading agricultural export company connecting Indian farmers to global markets",
+      results: "Expanded international presence and export growth",
+      color: "bg-gradient-to-br from-green-500 to-blue-500",
+    },
+
+    // Business & Consultancy
+    {
+      id: 25,
+      name: "Excellent",
+      logo: "/clients/excellent.png",
+      category: "business",
+      industry: "Business Consultancy",
+      services: [
+        "Business Consultancy Marketing",
+        "Professional Branding",
+        "Success Coaching Promotion",
+        "Corporate Services",
+      ],
+      description: "Business excellence and success coaching consultancy services for growth",
+      results: "Enhanced consultancy reach and client success",
+      color: "bg-gradient-to-br from-purple-500 to-blue-500",
+    },
+    {
+      id: 26,
+      name: "Krishna Niti",
+      logo: "/clients/krishna-niti.jpeg",
+      category: "business",
+      industry: "Spiritual & Cultural Services",
+      services: ["Cultural Content Marketing", "Spiritual Branding", "Community Engagement", "Value-based Marketing"],
+      description: "Spiritual and cultural guidance platform based on Krishna's timeless teachings",
+      results: "Expanded spiritual community and engagement",
+      color: "bg-gradient-to-br from-yellow-500 to-orange-600",
+    },
+    {
+      id: 27,
+      name: "Metta Matchmaking",
+      logo: "/clients/metta-matchmaking.jpeg",
+      category: "business",
+      industry: "Matchmaking Services",
+      services: ["Relationship Marketing", "Trust Building Content", "Social Media Strategy", "Community Building"],
+      description: "Professional matchmaking services where values meet hearts for meaningful connections",
+      results: "Increased successful matches and client satisfaction",
+      color: "bg-gradient-to-br from-pink-500 to-red-500",
+    },
+    {
+      id: 28,
+      name: "Sudnyata Groups",
+      logo: "/clients/sudnyata-groups.jpeg",
+      category: "business",
+      industry: "Business Group",
+      services: ["Corporate Branding", "Multi-business Marketing", "Group Identity", "Diversified Promotion"],
+      description: "Diversified business group offering multiple services and solutions",
+      results: "Unified brand identity and cross-business synergy",
+      color: "bg-gradient-to-br from-green-600 to-teal-700",
+    },
+
+    // Manufacturing & Construction
+    {
+      id: 29,
+      name: "LEMI Interior Fixtures",
+      logo: "/clients/lemi-interior.jpeg",
+      category: "manufacturing",
+      industry: "Interior Design & Fixtures",
+      services: ["Interior Design Marketing", "Product Showcase", "B2B Lead Generation", "Project Portfolio"],
+      description: "Professional interior fixtures and design solutions for commercial and residential spaces",
+      results: "Increased project inquiries and design contracts",
+      color: "bg-gradient-to-br from-blue-600 to-purple-600",
+    },
+    {
+      id: 30,
+      name: "S.S. Enterprise",
+      logo: "/clients/ss-enterprise.jpeg",
+      category: "manufacturing",
+      industry: "Construction & Manufacturing",
+      services: ["Industrial Marketing", "B2B Lead Generation", "Construction Promotion", "Manufacturer Branding"],
+      description: "RCC pipe manufacturer and construction solutions provider for infrastructure projects",
+      results: "Enhanced B2B partnerships and project contracts",
+      color: "bg-gradient-to-br from-red-600 to-gray-700",
     },
   ]
 
-  const filteredCaseStudies =
-    activeFilter === "all" ? caseStudies : caseStudies.filter((study) => study.industry === activeFilter)
+  const filteredClients =
+    activeFilter === "all" ? allClients : allClients.filter((client) => client.category === activeFilter)
+
+  const stats = [
+    { number: "33+", label: "Happy Clients", icon: <Users className="h-6 w-6" /> },
+    { number: "30+", label: "Industries Served", icon: <Target className="h-6 w-6" /> },
+    { number: "4X-12X", label: "Average ROI", icon: <TrendingUp className="h-6 w-6" /> },
+    { number: "200+", label: "Projects Completed", icon: <Award className="h-6 w-6" /> },
+  ]
 
   return (
     <div className="min-h-screen bg-white">
@@ -154,15 +399,15 @@ export default function PortfolioPage() {
             <div className="max-w-2xl">
               <Badge className="mb-6 bg-purple-100 text-purple-700">
                 <Star className="w-4 h-4 mr-2" />
-                Our Portfolio
+                Our Complete Portfolio
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Success Stories That
-                <span className="gradient-text block">Speak for Themselves</span>
+                33+ Success Stories Across
+                <span className="gradient-text block">30+ Industries</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Discover how we've helped businesses across industries achieve remarkable growth through strategic
-                digital marketing
+                Discover our comprehensive portfolio showcasing diverse businesses we've helped achieve remarkable
+                digital growth and success
               </p>
             </div>
             <div className="relative">
@@ -173,6 +418,28 @@ export default function PortfolioPage() {
                 height={400}
                 className="w-full max-w-sm mx-auto animate-float"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="text-center bg-gradient-to-br from-purple-50 to-blue-50 p-6 rounded-2xl shadow-lg"
+                >
+                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center text-white">
+                    {stat.icon}
+                  </div>
+                  <div className="text-3xl font-bold gradient-text mb-2">{stat.number}</div>
+                  <div className="text-gray-600 font-medium text-sm">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -193,136 +460,70 @@ export default function PortfolioPage() {
                     : "border-purple-200 text-purple-600 hover:bg-purple-50 font-semibold rounded-xl"
                 }
               >
-                {filter.label}
+                {filter.label} ({filter.count})
               </Button>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Case Studies Grid */}
+      {/* Clients Grid */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="grid gap-16">
-              {filteredCaseStudies.map((study, index) => (
-                <Card key={study.id} className="border-0 shadow-2xl overflow-hidden card-hover">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {filteredClients.map((client) => (
+                <Card key={client.id} className="border-0 shadow-xl card-hover bg-white overflow-hidden">
                   <CardContent className="p-0">
-                    <div className="grid lg:grid-cols-2 gap-0">
-                      {/* Content Side */}
-                      <div className="p-8 lg:p-12">
-                        <div className="flex items-center gap-4 mb-6">
-                          <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg border">
-                            <Image
-                              src={study.logo || "/placeholder.svg"}
-                              alt={study.client}
-                              width={48}
-                              height={48}
-                              className="object-contain"
-                            />
-                          </div>
-                          <div>
-                            <h3 className="text-2xl font-bold text-gray-900">{study.client}</h3>
-                            <Badge variant="secondary" className="mt-1 capitalize bg-purple-100 text-purple-700">
-                              {study.industry}
-                            </Badge>
-                          </div>
+                    {/* Header with Logo */}
+                    <div className={`${client.color} p-4 text-white`}>
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center">
+                          <Image
+                            src={client.logo || "/placeholder.svg"}
+                            alt={client.name}
+                            width={32}
+                            height={32}
+                            className="object-contain"
+                          />
                         </div>
-
-                        <div className="mb-6">
-                          <p className="text-gray-600 leading-relaxed">{study.description}</p>
-                        </div>
-
-                        <div className="space-y-8">
-                          <div>
-                            <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                              <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg flex items-center justify-center">
-                                <Target className="h-4 w-4 text-white" />
-                              </div>
-                              Challenge
-                            </h4>
-                            <p className="text-gray-600 leading-relaxed">{study.problem}</p>
-                          </div>
-
-                          <div>
-                            <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                                <Award className="h-4 w-4 text-white" />
-                              </div>
-                              Our Approach
-                            </h4>
-                            <p className="text-gray-600 leading-relaxed">{study.approach}</p>
-                          </div>
-
-                          <div>
-                            <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                              <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
-                                <TrendingUp className="h-4 w-4 text-white" />
-                              </div>
-                              Results Achieved
-                            </h4>
-                            <div className="grid grid-cols-2 gap-4">
-                              <div className="bg-gradient-to-br from-purple-50 to-blue-50 p-4 rounded-xl">
-                                <div className="text-2xl font-bold gradient-text mb-1">
-                                  {study.results.leads.split(" ")[0]}
-                                </div>
-                                <div className="text-sm text-gray-600">
-                                  {study.results.leads.split(" ").slice(1).join(" ")}
-                                </div>
-                              </div>
-                              <div className="bg-gradient-to-br from-orange-50 to-red-50 p-4 rounded-xl">
-                                <div className="text-2xl font-bold text-orange-600 mb-1">{study.results.roi}</div>
-                                <div className="text-sm text-gray-600">Return on Investment</div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="bg-gradient-to-br from-gray-50 to-blue-50 p-6 rounded-xl">
-                            <div className="flex items-start gap-3">
-                              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                                <Users className="h-5 w-5 text-white" />
-                              </div>
-                              <div>
-                                <p className="text-gray-700 italic leading-relaxed mb-2">"{study.testimonial}"</p>
-                                <p className="text-sm text-gray-500 font-medium">— {study.client} Team</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div>
-                            <h5 className="font-semibold text-gray-900 mb-3">Services Used:</h5>
-                            <div className="flex flex-wrap gap-2">
-                              {study.services.map((service, serviceIndex) => (
-                                <Badge
-                                  key={serviceIndex}
-                                  variant="outline"
-                                  className="text-purple-600 border-purple-200 bg-purple-50"
-                                >
-                                  {service}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
+                        <div className="flex-1">
+                          <h3 className="font-bold text-sm leading-tight">{client.name}</h3>
+                          <p className="text-xs opacity-90">{client.industry}</p>
                         </div>
                       </div>
+                      {client.results && (
+                        <div className="bg-white/20 backdrop-blur-sm rounded-lg p-2">
+                          <p className="text-xs font-medium">{client.results}</p>
+                        </div>
+                      )}
+                    </div>
 
-                      {/* Image Side */}
-                      <div className="bg-gradient-to-br from-purple-50 to-blue-50 p-8 lg:p-12 flex items-center justify-center">
-                        <div className="w-full max-w-md text-center">
-                          <div className="w-64 h-64 mx-auto mb-6 bg-white rounded-2xl shadow-2xl flex items-center justify-center">
-                            <div className="w-32 h-32 bg-gray-50 rounded-2xl flex items-center justify-center">
-                              <Image
-                                src={study.logo || "/placeholder.svg"}
-                                alt={study.client}
-                                width={80}
-                                height={80}
-                                className="object-contain"
-                              />
-                            </div>
-                          </div>
-                          <div className="text-center">
-                            <div className="text-3xl font-bold gradient-text mb-1">{study.results.timeline}</div>
-                            <div className="text-gray-600 font-medium">Project Timeline</div>
+                    {/* Content */}
+                    <div className="p-4">
+                      <p className="text-gray-600 text-sm mb-4 leading-relaxed">{client.description}</p>
+
+                      <div className="space-y-3">
+                        <div>
+                          <h4 className="text-xs font-semibold text-gray-900 mb-2">Services Provided:</h4>
+                          <div className="flex flex-wrap gap-1">
+                            {client.services.slice(0, 3).map((service, index) => (
+                              <Badge
+                                key={index}
+                                variant="outline"
+                                className="text-xs px-2 py-1 text-purple-600 border-purple-200 bg-purple-50"
+                              >
+                                {service}
+                              </Badge>
+                            ))}
+                            {client.services.length > 3 && (
+                              <Badge
+                                variant="outline"
+                                className="text-xs px-2 py-1 text-gray-500 border-gray-200 bg-gray-50"
+                              >
+                                +{client.services.length - 3} more
+                              </Badge>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -335,28 +536,81 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Industry Breakdown */}
       <section className="py-20 section-gradient">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12">Our Track Record</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="bg-white p-6 rounded-2xl shadow-lg">
-                <div className="text-4xl font-bold gradient-text mb-2">120+</div>
-                <div className="text-gray-600 font-medium">Happy Clients</div>
-              </div>
-              <div className="bg-white p-6 rounded-2xl shadow-lg">
-                <div className="text-4xl font-bold gradient-text mb-2">200+</div>
-                <div className="text-gray-600 font-medium">Projects Completed</div>
-              </div>
-              <div className="bg-white p-6 rounded-2xl shadow-lg">
-                <div className="text-4xl font-bold gradient-text mb-2">25+</div>
-                <div className="text-gray-600 font-medium">Industries Served</div>
-              </div>
-              <div className="bg-white p-6 rounded-2xl shadow-lg">
-                <div className="text-4xl font-bold gradient-text mb-2">4X-10X</div>
-                <div className="text-gray-600 font-medium">Average ROI</div>
-              </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Industries We Serve</h2>
+              <p className="text-xl text-gray-600">Diverse expertise across multiple sectors</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="border-0 shadow-xl bg-white/90 backdrop-blur-sm">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white">
+                    <GraduationCap className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Education & Training</h3>
+                  <p className="text-3xl font-bold gradient-text mb-2">12</p>
+                  <p className="text-gray-600 text-sm">Schools, Institutes, Coaching Centers</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-xl bg-white/90 backdrop-blur-sm">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white">
+                    <Building2 className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Technology & Business</h3>
+                  <p className="text-3xl font-bold gradient-text mb-2">8</p>
+                  <p className="text-gray-600 text-sm">Tech Companies, Digital Services</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-xl bg-white/90 backdrop-blur-sm">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white">
+                    <Leaf className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Agriculture & Export</h3>
+                  <p className="text-3xl font-bold gradient-text mb-2">4</p>
+                  <p className="text-gray-600 text-sm">Agro Services, Export Companies</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-xl bg-white/90 backdrop-blur-sm">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white">
+                    <Briefcase className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Business Services</h3>
+                  <p className="text-3xl font-bold gradient-text mb-2">5</p>
+                  <p className="text-gray-600 text-sm">Consultancy, Investment, Matchmaking</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-xl bg-white/90 backdrop-blur-sm">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-gray-600 to-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white">
+                    <Factory className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Manufacturing</h3>
+                  <p className="text-3xl font-bold gradient-text mb-2">4</p>
+                  <p className="text-gray-600 text-sm">Construction, Interior, Manufacturing</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-xl bg-white/90 backdrop-blur-sm">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white">
+                    <Heart className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Others</h3>
+                  <p className="text-3xl font-bold gradient-text mb-2">+</p>
+                  <p className="text-gray-600 text-sm">And Many More Industries</p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
@@ -367,12 +621,12 @@ export default function PortfolioPage() {
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Be Our Next Success Story?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Join Our Success Stories?</h2>
             <p className="text-xl text-gray-300 mb-8">
-              Let's discuss how we can help your business achieve similar results
+              Let's discuss how we can help your business achieve similar remarkable results
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link href="https://wa.me/18408004141">
+              <Link href="https://wa.me/918408004141">
                 <Button
                   size="lg"
                   className="btn-orange text-white px-10 py-4 text-lg font-semibold rounded-2xl shadow-2xl"
@@ -387,7 +641,6 @@ export default function PortfolioPage() {
                   size="lg"
                   className="border-2 border-white/30 text-white hover:bg-white/10 px-10 py-4 text-lg font-semibold rounded-2xl bg-transparent"
                 >
-                  <ExternalLink className="mr-3 h-6 w-6" />
                   View Our Services
                 </Button>
               </Link>

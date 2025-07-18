@@ -16,6 +16,11 @@ import {
   TrendingUp,
   Users,
   Star,
+  Award,
+  Building2,
+  GraduationCap,
+  Heart,
+  Leaf,
 } from "lucide-react"
 
 export default function ServicesPage() {
@@ -166,6 +171,157 @@ export default function ServicesPage() {
     },
   ]
 
+  const clientCategories = [
+    {
+      title: "Education & Training",
+      icon: <GraduationCap className="h-6 w-6" />,
+      color: "bg-gradient-to-br from-blue-500 to-purple-500",
+      clients: [
+        {
+          name: "To Learn To Earn",
+          logo: "/clients/to-learn-to-earn.png",
+          services: "Social Media Marketing, Google Ads, Content Strategy",
+          description: "Skill development platform helping students build practical career skills",
+        },
+        {
+          name: "Speak UP Pro",
+          logo: "/clients/speak-up-pro.png",
+          services: "Personal Branding, LinkedIn Marketing, Video Content",
+          description: "Professional communication and public speaking training institute",
+        },
+        {
+          name: "Vidyalankaar Classes",
+          logo: "/clients/vidyalankaar.png",
+          services: "Local SEO, Social Media, Website Development",
+          description: "Medical and engineering entrance exam preparation center",
+        },
+        {
+          name: "Erit Maker Test Series",
+          logo: "/clients/erit-maker.png",
+          services: "Content Marketing, Social Media, Student Engagement",
+          description: "Competitive exam preparation and comprehensive test series platform",
+        },
+        {
+          name: "TICT Tulsi Institute",
+          logo: "/clients/tulsi-institute.png",
+          services: "Local SEO, Social Media Marketing, Website Development",
+          description: "Computer technology and professional IT certification courses",
+        },
+        {
+          name: "Jeevan Prakash School",
+          logo: "/clients/jeevan-prakash-school.jpeg",
+          services: "Online/Offline Advertising, Social Media Marketing",
+          description: "Quality education institution focused on holistic student development",
+        },
+        {
+          name: "Jeevan Prakash Paramedical",
+          logo: "/clients/jeevan-prakash-paramedical.jpeg",
+          services: "Admission Marketing, Meta Ads, Landing Pages",
+          description: "Premier paramedical college offering healthcare education programs",
+        },
+        {
+          name: "Vishwa Foundation",
+          logo: "/clients/vishwa-foundation.jpeg",
+          services: "Branding, Social Media Marketing, Student Outreach",
+          description: "Educational foundation committed to quality education initiatives",
+        },
+        {
+          name: "Rahul Sir's Vishwa Foundation",
+          logo: "/clients/rahul-vishwa-foundation.jpeg",
+          services: "Branding, Educational Content Marketing",
+          description: "Foundation classes and educational support services",
+        },
+      ],
+    },
+    {
+      title: "Technology & Business",
+      icon: <Building2 className="h-6 w-6" />,
+      color: "bg-gradient-to-br from-cyan-500 to-blue-500",
+      clients: [
+        {
+          name: "Dr. Digital India",
+          logo: "/clients/dr-digital-india.png",
+          services: "Content Marketing, LinkedIn Marketing, Thought Leadership",
+          description: "Digital marketing consultancy and business transformation services",
+        },
+        {
+          name: "G.T.I",
+          logo: "/clients/gti.png",
+          services: "Local SEO, Social Media Marketing, Website Development",
+          description: "Computer technology institute offering IT training and certifications",
+        },
+        {
+          name: "Sony Technical Institute",
+          logo: "/clients/sony-technical-institute.jpeg",
+          services: "Logo Design, Certificates, Brand Identity",
+          description: "Technical education institute providing computer and technology courses",
+        },
+        {
+          name: "HR24JOB.com",
+          logo: "/clients/hr24job.jpeg",
+          services: "Website Development, Client Services, Portal Management",
+          description: "Comprehensive job portal connecting employers with qualified candidates",
+        },
+        {
+          name: "Yashodhara",
+          logo: "/clients/yashodhara.jpeg",
+          services: "Personal Development Marketing, Website Development",
+          description: "Personal development and transformation services platform",
+        },
+      ],
+    },
+    {
+      title: "Agriculture & Services",
+      icon: <Leaf className="h-6 w-6" />,
+      color: "bg-gradient-to-br from-green-500 to-emerald-500",
+      clients: [
+        {
+          name: "Shabdratna",
+          logo: "/clients/shabdratna.png",
+          services: "Content Marketing, Audio Services, Brand Development",
+          description: "Premium audio content creation and voice-over services",
+        },
+        {
+          name: "Dr. Agro India",
+          logo: "/clients/dr-agro-india.jpeg",
+          services: "Digital Marketing, Agricultural Content, SEO",
+          description: "Largest agriculture service provider offering comprehensive farming solutions",
+        },
+        {
+          name: "Bharat Agro",
+          logo: "/clients/bharat-agro.jpeg",
+          services: "Agricultural Marketing, Brand Development, Digital Presence",
+          description: "Agricultural services and farming solutions provider",
+        },
+      ],
+    },
+    {
+      title: "Coaching & Personal Development",
+      icon: <Heart className="h-6 w-6" />,
+      color: "bg-gradient-to-br from-orange-500 to-red-500",
+      clients: [
+        {
+          name: "Coach Yashodeep",
+          logo: "/clients/coach-yashodeep.png",
+          services: "Personal Branding, Content Marketing, Social Media Strategy",
+          description: "Personal development and life coaching for goal achievement",
+        },
+        {
+          name: "Excellent",
+          logo: "/clients/excellent.png",
+          services: "Business Consultancy Marketing, Professional Branding",
+          description: "Business excellence and success coaching consultancy services",
+        },
+        {
+          name: "Krishna Niti",
+          logo: "/clients/krishna-niti.jpeg",
+          services: "Cultural Content Marketing, Spiritual Branding",
+          description: "Spiritual and cultural guidance platform based on Krishna's teachings",
+        },
+      ],
+    },
+  ]
+
   const workingStyle = [
     {
       icon: <Target className="h-6 w-6" />,
@@ -210,16 +366,16 @@ export default function ServicesPage() {
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
                 From strategy to execution, we provide end-to-end digital marketing services that drive real business
-                results
+                results across 25+ industries
               </p>
             </div>
             <div className="relative">
               <Image
-                src="/images/marketing-funnel.jpg"
-                alt="Marketing Funnel"
-                width={500}
-                height={400}
-                className="w-full rounded-2xl shadow-2xl"
+                src="/images/rocket-growth.png"
+                alt="Business Growth and Success"
+                width={600}
+                height={500}
+                className="w-full max-w-lg mx-auto animate-float"
               />
             </div>
           </div>
@@ -301,23 +457,88 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Working Style */}
+      {/* Client Showcase by Industry */}
       <section className="py-20 section-gradient">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <Badge className="mb-6 bg-white/80 text-purple-700 border-purple-200">
+                <Award className="w-4 h-4 mr-2" />
+                Our Clients Across Industries
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Trusted by 130+ Businesses Across 25+ Industries
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                From education to agriculture, technology to personal development - we've helped diverse businesses
+                achieve digital success
+              </p>
+            </div>
+
+            <div className="space-y-16">
+              {clientCategories.map((category, categoryIndex) => (
+                <div key={categoryIndex}>
+                  <div className="flex items-center gap-4 mb-8">
+                    <div
+                      className={`w-12 h-12 ${category.color} rounded-2xl flex items-center justify-center text-white shadow-lg`}
+                    >
+                      {category.icon}
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">{category.title}</h3>
+                    <div className="flex-1 h-px bg-gradient-to-r from-purple-200 to-transparent"></div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {category.clients.map((client, clientIndex) => (
+                      <Card key={clientIndex} className="border-0 shadow-lg card-hover bg-white/90 backdrop-blur-sm">
+                        <CardContent className="p-6">
+                          <div className="flex items-center gap-4 mb-4">
+                            <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center">
+                              <Image
+                                src={client.logo || "/placeholder.svg"}
+                                alt={client.name}
+                                width={32}
+                                height={32}
+                                className="object-contain"
+                              />
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="font-bold text-gray-900 text-sm">{client.name}</h4>
+                            </div>
+                          </div>
+                          <p className="text-gray-600 text-sm mb-3 leading-relaxed">{client.description}</p>
+                          <div className="space-y-2">
+                            <p className="text-xs font-semibold text-purple-600">Services Provided:</p>
+                            <p className="text-xs text-gray-500">{client.services}</p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Working Style */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <Badge className="mb-6 bg-white/80 text-purple-700 border-purple-200">
+                <Badge className="mb-6 bg-purple-100 text-purple-700">
                   <Target className="w-4 h-4 mr-2" />
                   Our Working Style
                 </Badge>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">How We Ensure Success</h2>
                 <p className="text-xl text-gray-600 mb-8">
-                  Our proven methodology delivers consistent results for every client
+                  Our proven methodology delivers consistent results for every client across all industries
                 </p>
                 <div className="grid md:grid-cols-2 gap-6">
                   {workingStyle.map((item, index) => (
-                    <div key={index} className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-lg card-hover">
+                    <div key={index} className="flex items-start gap-4 p-6 bg-gray-50 rounded-xl shadow-lg card-hover">
                       <div
                         className={`w-12 h-12 ${item.color} rounded-xl flex items-center justify-center flex-shrink-0 text-white shadow-lg`}
                       >
@@ -350,12 +571,12 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Join Our Success Stories?</h2>
             <p className="text-xl text-gray-300 mb-8">
               Choose the service that fits your needs or let us create a custom solution for your business
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link href="https://wa.me/18408004141">
+              <Link href="https://wa.me/918408004141">
                 <Button
                   size="lg"
                   className="btn-orange text-white px-10 py-4 text-lg font-semibold rounded-2xl shadow-2xl"

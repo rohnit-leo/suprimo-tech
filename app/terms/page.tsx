@@ -154,15 +154,12 @@ export default function TermsPage() {
                   If you have any questions about these Terms of Service, please contact us for clarification.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="mailto:info.suprimotech@gmail.com"
-                    className="text-orange-400 hover:text-orange-300 font-semibold"
-                  >
-                    info.suprimotech@gmail.com
+                  <a href="mailto:info@suprimotech.com" className="text-orange-400 hover:text-orange-300 font-semibold">
+                    info@suprimotech.com
                   </a>
                   <span className="text-gray-400 hidden sm:block">|</span>
-                  <a href="tel:840-800-4141" className="text-orange-400 hover:text-orange-300 font-semibold">
-                    840-800-4141
+                  <a href="tel:+918408004141" className="text-orange-400 hover:text-orange-300 font-semibold">
+                    +91 840-800-4141
                   </a>
                 </div>
               </CardContent>

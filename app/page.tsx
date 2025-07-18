@@ -144,24 +144,45 @@ export default function HomePage() {
   const testimonials = [
     {
       quote:
-        "Suprimo Tech transformed our digital presence completely. Our student enrollments increased by 300% within just 3 months!",
+        "Suprimo Tech's social media strategy transformed our online presence completely. Our student enrollments increased by 300% within just 3 months! Their content and ad campaigns were spot-on.",
       author: "To Learn To Earn Team",
-      position: "Education Platform",
+      position: "Skill Development Platform",
       logo: "/clients/to-learn-to-earn.png",
     },
     {
       quote:
-        "The social media strategy they created for us was phenomenal. Our brand visibility and engagement skyrocketed!",
+        "The personal branding and LinkedIn marketing they created for us was phenomenal. Our brand visibility and professional inquiries skyrocketed by 250%!",
       author: "Speak UP Pro",
-      position: "Communication Training",
+      position: "Communication Training Institute",
       logo: "/clients/speak-up-pro.png",
     },
     {
       quote:
-        "As a digital marketing consultant myself, I can say Suprimo Tech's approach is truly professional and result-oriented.",
+        "As a digital marketing consultant myself, I can confidently say Suprimo Tech's content marketing and thought leadership approach is truly professional and result-oriented. 400% increase in consultations!",
       author: "Dr. Digital India",
       position: "Digital Marketing Expert",
       logo: "/clients/dr-digital-india.png",
+    },
+    {
+      quote:
+        "Their agricultural digital marketing strategy helped us reach farmers across Maharashtra. Our service registrations increased by 320% and we expanded to 5 new districts!",
+      author: "Dr. Agro India Team",
+      position: "Agriculture Service Provider",
+      logo: "/clients/dr-agro-india.jpeg",
+    },
+    {
+      quote:
+        "The website development and job portal management services were exceptional. Our platform functionality improved dramatically and user engagement increased by 300%!",
+      author: "HR24JOB.com",
+      position: "Job Portal Platform",
+      logo: "/clients/hr24job.jpeg",
+    },
+    {
+      quote:
+        "Suprimo Tech's export marketing and international branding helped us expand globally. Our export inquiries increased by 280% and we entered 3 new international markets!",
+      author: "Sahara Agro Export",
+      position: "Agricultural Export Company",
+      logo: "/clients/sahara-agro-export.jpeg",
     },
   ]
 
@@ -492,7 +513,7 @@ export default function HomePage() {
                   <ArrowRight className="ml-3 h-6 w-6" />
                 </Button>
               </Link>
-              <a href="https://wa.me/18408004141" target="_blank" rel="noopener noreferrer" className="inline-flex">
+              <a href="https://wa.me/918408004141" target="_blank" rel="noopener noreferrer" className="inline-flex">
                 <Button
                   variant="outline"
                   size="lg"
@@ -509,7 +530,7 @@ export default function HomePage() {
 
       {/* WhatsApp Float Button */}
       <a
-        href="https://wa.me/18408004141"
+        href="https://wa.me/918408004141"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50"

@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Instagram, Youtube, Twitter, Mail, Phone, MapPin, ArrowRight } from "lucide-react"
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react"
 
 export default function Footer() {
   const services = [
@@ -44,32 +44,6 @@ export default function Footer() {
               AI-powered digital marketing agency helping businesses scale with smart strategies, automation, and
               data-driven results.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors"
-              >
-                <Youtube className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-            </div>
           </div>
 
           {/* Services */}
@@ -132,7 +106,7 @@ export default function Footer() {
                 <Phone className="h-5 w-5 text-purple-400 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium">Phone</p>
-                  <p className="text-gray-300">840-800-4141</p>
+                  <p className="text-gray-300">+91 840-800-4141</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -146,7 +120,7 @@ export default function Footer() {
                 <MapPin className="h-5 w-5 text-purple-400 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium">Location</p>
-                  <p className="text-gray-300">Mumbai, Maharashtra, India</p>
+                  <p className="text-gray-300">Chh. Sambhajinagar, Maharashtra, India</p>
                 </div>
               </div>
             </div>
@@ -157,7 +131,7 @@ export default function Footer() {
         <div className="border-t border-white/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-300 text-sm">
-              © 2024 Suprimo Tech. All rights reserved. | Developed by{" "}
+              © 2025 Suprimo Tech. All rights reserved. | Developed by{" "}
               <a
                 href="https://nexturex.com"
                 target="_blank"

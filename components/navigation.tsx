@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Menu, X, Facebook, Instagram, Youtube, Twitter } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -32,20 +31,11 @@ export default function Navigation() {
       {/* Top Bar */}
       <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 text-white py-2">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center text-sm">
+          <div className="flex justify-center items-center text-sm">
             <div className="flex items-center gap-2">
-              <span>🚀 Welcome To Suprimo Tech</span>
-            </div>
-            <div className="hidden md:flex items-center gap-6">
-              <Link href="/contact" className="hover:text-purple-200 transition-colors">
-                Download Brochure
-              </Link>
-              <div className="flex items-center gap-3">
-                <Facebook className="h-4 w-4 hover:text-purple-200 cursor-pointer transition-colors" />
-                <Instagram className="h-4 w-4 hover:text-purple-200 cursor-pointer transition-colors" />
-                <Youtube className="h-4 w-4 hover:text-purple-200 cursor-pointer transition-colors" />
-                <Twitter className="h-4 w-4 hover:text-purple-200 cursor-pointer transition-colors" />
-              </div>
+              <span>
+                🚀 Welcome To Suprimo Tech - Call Time: Mon-Fri 10 am to 6pm | Visit us: Chh. Sambhajinagar, MH
+              </span>
             </div>
           </div>
         </div>
@@ -85,15 +75,6 @@ export default function Navigation() {
               ))}
             </nav>
 
-            {/* CTA Button */}
-            <div className="hidden lg:block">
-              <Link href="/contact">
-                <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-                  Customer Corner →
-                </Button>
-              </Link>
-            </div>
-
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -120,11 +101,6 @@ export default function Navigation() {
                   {item.name}
                 </Link>
               ))}
-              <Link href="/contact" onClick={() => setIsOpen(false)}>
-                <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-2 rounded-lg font-semibold mt-4 shadow-lg">
-                  Customer Corner →
-                </Button>
-              </Link>
             </nav>
           </div>
         </div>
